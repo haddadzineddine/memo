@@ -6,9 +6,7 @@ import 'package:untitled/features/marker_tracking/presentation/screens/home_scre
 final SplachScreen = AnimatedSplashScreen(
   duration: 3000,
   splash: Image.asset("assets/images/logo.png"),
-  nextScreen: const HomeScreen(
-    title: 'home_screen',
-  ),
+  nextScreen: const HomeScreen(),
   splashTransition: SplashTransition.rotationTransition,
   backgroundColor: primaryColor,
 );
