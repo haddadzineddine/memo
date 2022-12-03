@@ -78,7 +78,7 @@ class _MemoScreenState extends State<MemoScreen> {
                     child: Transform.scale(
                         alignment: Alignment.center,
                         scale:
-                            1.2, // controller.value.aspectRatio / deviceRatio,
+                controller.value.aspectRatio / deviceRatio, // controller.value.aspectRatio / deviceRatio,
                         child: CameraPreview(controller)))),
             Positioned(
                 child: Padding(

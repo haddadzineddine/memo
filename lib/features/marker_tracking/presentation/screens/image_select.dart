@@ -80,7 +80,8 @@ class _ImageScreenState extends State<ImageScreen> {
               child: Center(
                   child: Transform.scale(
                       alignment: Alignment.center,
-                      scale: 1.2, // controller.value.aspectRatio / deviceRatio,
+                      scale:
+              controller.value.aspectRatio / deviceRatio, // controller.value.aspectRatio / deviceRatio,
                       child: CameraPreview(controller)))),
           Positioned(
               child: Padding(

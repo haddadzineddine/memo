@@ -71,50 +71,53 @@ class _HomeScreenState extends State<HomeScreen> {
     final size = MediaQuery.of(context).size;
     final deviceRatio = size.width / size.height;
     if (controller.value.isInitialized) {
-      return GestureDetector(
-        onTap: (() {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => ImageScreen(
-                      title: '',
-                      cameras: _cameras,
-                    )),
-          );
-        }),
-        child: Scaffold(
-            body: Stack(
-          children: [
-            Expanded(
-                child: Center(
-                    child: Transform.scale(
-                        alignment: Alignment.center,
-                        scale:
-                            1.2, // controller.value.aspectRatio / deviceRatio,
-                        child: CameraPreview(controller)))),
-            Positioned(
-                child: Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Image(
-                      height: 54,
-                      width: 54,
-                      image: AssetImage('assets/images/profile.png')),
-                  Image(
+      return Scaffold(
+          body: Stack(
+        children: [
+          Expanded(
+              child: Center(
+                  child: Transform.scale(
+                      alignment: Alignment.center,
+                      scale:
+                           controller.value.aspectRatio / deviceRatio,
+                      child: CameraPreview(controller)))),
+          Positioned(
+              child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Image(
+                    height: 54,
+                    width: 54,
+                    image: AssetImage('assets/images/profile.png')),
+                GestureDetector(
+                  onTap: (() {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ImageScreen(
+                            title: '',
+                            cameras: _cameras,
+                          )),
+                    );
+                  }),
+                  child: Image(
                       height: 38,
                       width: 38,
                       image: AssetImage('assets/images/logo.png')),
-                  Image(
-                      height: 28,
-                      width: 28,
-                      image: AssetImage('assets/images/menu.png')),
-                ],
-              ),
-            )),
-            Positioned(
-                bottom: 10.0,
+                ),
+                Image(
+                    height: 28,
+                    width: 28,
+                    image: AssetImage('assets/images/menu.png')),
+              ],
+            ),
+          )),
+          Positioned.fill(
+              bottom: 10.0,
+             child: Align(
+                alignment: Alignment.bottomCenter,
                 child: Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: Container(
@@ -145,10 +148,10 @@ class _HomeScreenState extends State<HomeScreen> {
                           ],
                         ),
                       )),
-                ))
-          ],
-        )),
-      );
+                ),
+              ))
+        ],
+      ));
     } else
       return Container();
   }
