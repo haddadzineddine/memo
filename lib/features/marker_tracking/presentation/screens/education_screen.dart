@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:untitled/features/marker_tracking/presentation/screens/home_screen.dart';
 
 class EducationScreen extends StatefulWidget {
   const EducationScreen({Key? key}) : super(key: key);
@@ -55,13 +56,11 @@ class _EducationScreenState extends State<EducationScreen> {
             ),
             CarouselSlider(
               options: CarouselOptions(
-
-                height: 600,
-                autoPlay: true,
-                aspectRatio: 1.0,
-                enlargeCenterPage: false,
-                enableInfiniteScroll: false
-              ),
+                  height: 600,
+                  autoPlay: true,
+                  aspectRatio: 1.0,
+                  enlargeCenterPage: false,
+                  enableInfiniteScroll: false),
               items: imgList
                   .map((item) => Column(
                         children: [
@@ -105,20 +104,26 @@ class _EducationScreenState extends State<EducationScreen> {
                       ))
                   .toList(),
             ),
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-              decoration: BoxDecoration(
-                border: Border.all(color: Color(0xff6FB353)),
-                borderRadius: BorderRadius.circular(36),
+            GestureDetector(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const HomeScreen()),
               ),
-              child: Center(
-                child: Text(
-                  'العودة إلى الرئيسية',
-                  style: TextStyle(
-                    fontSize: 17,
-                    color: Color(0xff6FB353),
-                    fontFamily: 'poppins',
+              child: Container(
+                width: double.infinity,
+                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                decoration: BoxDecoration(
+                  border: Border.all(color: Color(0xff6FB353)),
+                  borderRadius: BorderRadius.circular(36),
+                ),
+                child: Center(
+                  child: Text(
+                    'العودة إلى الرئيسية',
+                    style: TextStyle(
+                      fontSize: 17,
+                      color: Color(0xff6FB353),
+                      fontFamily: 'poppins',
+                    ),
                   ),
                 ),
               ),

@@ -11,3 +11,4 @@ final SplachScreen = AnimatedSplashScreen(
   splashTransition: SplashTransition.rotationTransition,
   backgroundColor: primaryColor,
 );
+
