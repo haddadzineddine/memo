@@ -38,7 +38,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   animated_splash_screen: ^1.3.0
   arkit_plugin: ^1.0.5
+<<<<<<< HEAD
   camera: ^0.10.0+4
+=======
+  carousel_slider: ^4.1.1
+>>>>>>> 0570f222fdd7d2f64ea68e2202e8dbdd0794ccc1
 
 dev_dependencies:
   flutter_test:

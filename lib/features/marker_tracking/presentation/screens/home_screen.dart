@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:camera/camera.dart';
 import 'package:untitled/features/marker_tracking/presentation/screens/image_select.dart';
 import 'package:untitled/main.dart';
+=======
+>>>>>>> 0570f222fdd7d2f64ea68e2202e8dbdd0794ccc1
 
 class HomeScreen extends StatefulWidget {
   List<CameraDescription>? cameras;
@@ -10,6 +13,7 @@ class HomeScreen extends StatefulWidget {
   final String title;
 
   @override
+<<<<<<< HEAD
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
@@ -149,3 +153,12 @@ class _HomeScreenState extends State<HomeScreen> {
       return Container();
   }
 }
+=======
+  Widget build(BuildContext context) {
+    return Container(
+      child: Text('helllcdo'),
+    );
+  }
+}
+
+>>>>>>> 0570f222fdd7d2f64ea68e2202e8dbdd0794ccc1

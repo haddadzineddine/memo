@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+<<<<<<< HEAD
         home: AnimatedSplashScreen(
       duration: 3000,
       splash: Image.asset("assets/images/logo.png"),
@@ -33,5 +34,13 @@ class MyApp extends StatelessWidget {
       splashTransition: SplashTransition.rotationTransition,
       backgroundColor: primaryColor,
     ));
+=======
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: SplachScreen,
+      )
+
+    );
+>>>>>>> 0570f222fdd7d2f64ea68e2202e8dbdd0794ccc1
   }
 }
