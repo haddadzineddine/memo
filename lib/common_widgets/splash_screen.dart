@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:untitled/constants/colors.dart';
+<<<<<<< HEAD
+import 'package:untitled/features/marker_tracking/presentation/screens/home_screen.dart';
+=======
 import 'package:untitled/features/marker_tracking/presentation/screens/education_screen.dart';
 
 
@@ -11,4 +14,8 @@ final SplachScreen = AnimatedSplashScreen(
   splashTransition: SplashTransition.rotationTransition,
   backgroundColor: primaryColor,
 );
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0570f222fdd7d2f64ea68e2202e8dbdd0794ccc1
+>>>>>>> abdc57971a9b9d150e58050a2507b9717dac72eb
