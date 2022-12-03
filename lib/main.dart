@@ -13,34 +13,22 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   _cameras = await availableCameras();
   //final cameras =await availableCameras();
-  runApp(const MyApp());
+  runApp(MyApp(cameras: _cameras));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final List<CameraDescription> cameras;
+
+  const MyApp({Key? key, required this.cameras}) : super(key: key);
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-<<<<<<< HEAD
-        home: AnimatedSplashScreen(
-      duration: 3000,
-      splash: Image.asset("assets/images/logo.png"),
-      nextScreen: HomeScreen(
-        title: '',
-        cameras: _cameras,
-      ),
-      splashTransition: SplashTransition.rotationTransition,
-      backgroundColor: primaryColor,
-    ));
-=======
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: SplachScreen,
-      )
-
+        body: SplachScreen(cameras),
+      ),
     );
->>>>>>> 0570f222fdd7d2f64ea68e2202e8dbdd0794ccc1
   }
 }

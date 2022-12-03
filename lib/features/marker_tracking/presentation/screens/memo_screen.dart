@@ -1,12 +1,9 @@
 import 'dart:async';
 
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:untitled/constants/colors.dart';
 import 'package:untitled/features/marker_tracking/presentation/screens/image_select.dart';
-import 'package:untitled/main.dart';
 
 class MemoScreen extends StatefulWidget {
   List<CameraDescription>? cameras;
@@ -22,7 +19,6 @@ class _MemoScreenState extends State<MemoScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     controller = CameraController(_cameras[0], ResolutionPreset.high);
     controller.initialize().then((value) {

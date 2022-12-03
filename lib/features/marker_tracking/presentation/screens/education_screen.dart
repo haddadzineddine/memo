@@ -1,15 +1,19 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:untitled/features/marker_tracking/presentation/screens/home_screen.dart';
 
 class EducationScreen extends StatefulWidget {
-  const EducationScreen({Key? key}) : super(key: key);
+  List<CameraDescription>? cameras;
+  EducationScreen({Key? key, required this.cameras}) : super(key: key);
 
   @override
   State<EducationScreen> createState() => _EducationScreenState();
 }
 
 class _EducationScreenState extends State<EducationScreen> {
+  late List<CameraDescription> _cameras = widget.cameras!;
+
   final List<List<String>> imgList = [
     [
       "assets/images/haz_tooth.png",
@@ -107,7 +111,8 @@ class _EducationScreenState extends State<EducationScreen> {
             GestureDetector(
               onTap: () => Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const HomeScreen()),
+                MaterialPageRoute(
+                    builder: (context) => HomeScreen(cameras: _cameras)),
               ),
               child: Container(
                 width: double.infinity,

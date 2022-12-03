@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:untitled/features/marker_tracking/presentation/screens/memo_screen.dart';
-import 'package:untitled/main.dart';
 
 class ImageScreen extends StatefulWidget {
   List<CameraDescription>? cameras;
@@ -19,7 +18,6 @@ class _ImageScreenState extends State<ImageScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     controller = CameraController(_cameras[0], ResolutionPreset.high);
     controller.initialize().then((value) {

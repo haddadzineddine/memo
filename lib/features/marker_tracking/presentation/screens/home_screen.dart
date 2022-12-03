@@ -1,19 +1,12 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
 import 'package:camera/camera.dart';
+import 'package:untitled/features/marker_tracking/presentation/screens/education_screen.dart';
 import 'package:untitled/features/marker_tracking/presentation/screens/image_select.dart';
-import 'package:untitled/main.dart';
-=======
->>>>>>> 0570f222fdd7d2f64ea68e2202e8dbdd0794ccc1
 
 class HomeScreen extends StatefulWidget {
   List<CameraDescription>? cameras;
-  HomeScreen({Key? key, required this.title, this.cameras}) : super(key: key);
-
-  final String title;
-
+  HomeScreen({Key? key, required this.cameras}) : super(key: key);
   @override
-<<<<<<< HEAD
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
@@ -23,7 +16,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     controller = CameraController(_cameras[0], ResolutionPreset.high);
     controller.initialize().then((value) {
@@ -126,25 +118,33 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: Container(
-                    width: 330,
-                    height: 58,
-                    decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.18),
-                        borderRadius: BorderRadius.circular(36)),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.arrow_back_ios,
-                          color: Colors.white,
+                      width: 330,
+                      height: 58,
+                      decoration: BoxDecoration(
+                          color: Colors.white.withOpacity(0.18),
+                          borderRadius: BorderRadius.circular(36)),
+                      child: GestureDetector(
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  EducationScreen(cameras: _cameras)),
                         ),
-                        Text(
-                          'هيا نتعلم',
-                          style: TextStyle(fontSize: 21, color: Colors.white),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.arrow_back_ios,
+                              color: Colors.white,
+                            ),
+                            Text(
+                              'هيا نتعلم',
+                              style:
+                                  TextStyle(fontSize: 21, color: Colors.white),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                  ),
+                      )),
                 ))
           ],
         )),
@@ -153,12 +153,3 @@ class _HomeScreenState extends State<HomeScreen> {
       return Container();
   }
 }
-=======
-  Widget build(BuildContext context) {
-    return Container(
-      child: Text('helllcdo'),
-    );
-  }
-}
-
->>>>>>> 0570f222fdd7d2f64ea68e2202e8dbdd0794ccc1
